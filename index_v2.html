@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RHINE LAB DATABASE</title><style>
+body{margin:0;background:#030608;color:#8fffdc;font-family:Consolas,monospace;overflow:hidden}
+body:before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03)0 2px,transparent 2px 4px);pointer-events:none}
+#boot,#main{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;flex-direction:column}
+.hidden{display:none}.panel{width:min(900px,92vw);background:rgba(0,0,0,.65);border:1px solid #39ffd0;padding:24px}
+.binary{margin-top:20px;color:#fff;word-break:break-all;line-height:1.8;font-size:18px}
+button{display:none;margin-top:20px;padding:10px 18px;background:#19c79d;border:none;cursor:pointer}
+#result{display:none;margin-top:24px;padding:18px;border:1px solid #39ffd0;background:rgba(57,255,208,.08);font-size:22px;color:#fff7d6;text-align:center;border-radius:8px}
+.footer{margin-top:24px;font-size:14px;color:#8bb}
+</style></head><body>
+<div id=boot><h1>RHINE LAB</h1><p>INITIALIZING...</p></div>
+<div id=main class=hidden><div class=panel>
+<h2>RHINE LAB INTERNAL DATABASE</h2><div id=log></div><div id=bin class=binary></div>
+<button id=btn onclick="decodeMsg()">解译 UTF-8 二进制</button>
+<div id=result>🌿<br><br>祝愿屏幕面前的博士和管理员——平安，快乐<br><br>—— 白面鸮</div>
+<div class=footer>STATUS : CLASSIFIED<br>Good Luck, Doctor.</div>
+</div></div>
+<script>
+const msgs=["[SYSTEM] Connecting...","[SYSTEM] Authentication Passed.","[SYSTEM] Access Level : Visitor","[SYSTEM] Archive #001 Loaded."];
+const binary=`111001111010010110011101 111001101000010010111111 111001011011000110001111 111001011011100110010101 111010011001110110100010 111001011000100110001101 111001111001101010000100 111001011000110110011010 111001011010001110101011 111001011001001010001100 111001111010111010100001 111001111001000010000110 111001011001000110011000 111000101000000010010100 111000101000000010010100 111001011011100110110011 111001011010111010001001 111011111011110010001100 111001011011111110101011 111001001011100110010000`;
+setTimeout(()=>{boot.classList.add('hidden');main.classList.remove('hidden');type(0)},1800);
+function type(i){if(i>=msgs.length){bin.textContent=binary;setTimeout(()=>btn.style.display='inline-block',500);return;}
+let d=document.createElement('div');log.appendChild(d);let t=0,s=setInterval(()=>{d.textContent=msgs[i].slice(0,t++);if(t>msgs[i].length){clearInterval(s);setTimeout(()=>type(i+1),250)}},25)}
+function decodeMsg(){btn.style.display='none';result.style.display='block';}
+</script></body></html>
