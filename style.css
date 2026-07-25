@@ -1,0 +1,1023 @@
+/* =====================================================
+   RHINE LAB DATABASE
+   style.css
+   FINAL VERSION
+===================================================== */
+
+
+
+/* =========================
+   基础设置
+========================= */
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+html{
+
+    width:100%;
+
+    min-height:100%;
+
+}
+
+
+
+body{
+
+    width:100%;
+
+    min-height:100vh;
+
+
+    background:#F5F1E6;
+
+
+    color:#45584F;
+
+
+    font-family:
+
+    "Consolas",
+
+    "Microsoft YaHei",
+
+    monospace;
+
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+
+}
+
+
+
+
+
+/* =========================
+   背景 LOGO
+========================= */
+
+
+.background-logo{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    pointer-events:none;
+
+
+    z-index:-1;
+
+
+}
+
+
+
+.background-logo img{
+
+
+    width:330px;
+
+
+    opacity:0.07;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   主页面
+========================= */
+
+
+#mainPage{
+
+
+    width:100%;
+
+
+    min-height:100vh;
+
+
+    padding:
+
+    40px 18px;
+
+
+}
+
+
+
+
+.terminal{
+
+
+    width:min(900px,100%);
+
+
+    margin:auto;
+
+
+    background:
+
+    rgba(255,255,255,.65);
+
+
+    border:
+
+    1px solid
+
+    rgba(70,90,80,.25);
+
+
+    border-radius:18px;
+
+
+    padding:32px;
+
+
+    box-shadow:
+
+
+    0 8px 30px
+
+    rgba(80,90,80,.12);
+
+
+
+    backdrop-filter:blur(8px);
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   顶部 LOGO
+========================= */
+
+
+.header{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    gap:12px;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+.header-logo{
+
+    width:95px;
+
+    height:95px;
+
+    object-fit:contain;
+
+    transform:translateY(2px);
+
+}
+
+
+
+.header-text{
+
+
+    text-align:left;
+
+
+}
+
+
+
+.header-title{
+
+
+    font-size:32px;
+
+
+    letter-spacing:4px;
+
+
+    color:#40554B;
+
+
+}
+
+
+
+.header-subtitle{
+
+
+    margin-top:6px;
+
+
+    font-size:16px;
+
+
+    letter-spacing:2px;
+
+
+    color:#73847B;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   系统日志
+========================= */
+
+
+#systemText{
+
+
+    min-height:120px;
+
+
+    font-size:18px;
+
+
+    line-height:1.9;
+
+
+    color:#53675D;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   二进制区域
+========================= */
+
+
+.binary-area{
+
+
+    position:relative;
+
+
+    margin-top:25px;
+
+
+    padding:15px;
+
+
+    padding-bottom:70px;
+
+
+    border:
+
+
+    1px solid
+
+    rgba(70,90,80,.18);
+
+
+    border-radius:10px;
+
+
+    background:
+
+    rgba(255,255,255,.4);
+
+
+}
+
+
+
+#binary{
+
+
+    font-size:14px;
+
+
+    line-height:1.9;
+
+
+    letter-spacing:1px;
+
+
+    color:#4C6258;
+
+
+    white-space:pre-wrap;
+
+
+    word-break:break-all;
+
+
+}/* =========================
+   数据解析按钮
+========================= */
+
+
+#decodeButton{
+
+
+    display:none;
+
+
+    margin:30px auto 10px;
+
+
+    padding:12px 38px;
+
+
+    border-radius:12px;
+
+
+    border:
+
+    1px solid
+
+    #6C8277;
+
+
+    background:
+
+    rgba(255,255,255,.55);
+
+
+    color:#4B6056;
+
+
+    font-size:17px;
+
+
+    font-family:inherit;
+
+
+    cursor:pointer;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+#decodeButton:hover{
+
+
+    background:#E7EEE9;
+
+
+}
+
+
+
+#decodeButton:active{
+
+
+    transform:scale(.96);
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   解码结果区域
+========================= */
+
+
+#resultBox{
+
+
+    display:none;
+
+
+    margin-top:35px;
+
+
+    padding:25px;
+
+
+    border-radius:15px;
+
+
+    border:
+
+
+    1px solid
+
+    rgba(70,90,80,.25);
+
+
+    background:
+
+    rgba(255,255,255,.7);
+
+
+    animation:
+
+    resultShow .6s ease;
+
+
+}
+
+
+
+
+.result-header{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.ptilopsis-title{
+
+    width:65px;
+
+}
+
+
+
+.result-title{
+
+    font-size:22px;
+
+    letter-spacing:3px;
+
+    color:#52665B;
+
+}
+
+
+
+
+.result-content{
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   坐姿GIF
+========================= */
+
+
+.sit-character{
+
+    position:absolute;
+
+    right:20px;
+
+    bottom:-45px;
+
+    z-index:5;
+
+    transition:0.2s linear;
+
+}
+
+
+
+.sit-character img{
+
+
+    width:85px;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   白面鸮+文字
+========================= */
+
+
+.message-area{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.message-text{
+
+    width:100%;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#465A50;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Footer
+========================= */
+
+
+.footer{
+
+
+    margin-top:45px;
+
+
+    text-align:center;
+
+
+    color:#718278;
+
+
+    font-size:15px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   动画
+========================= */
+
+
+@keyframes resultShow{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateY(20px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+
+    }
+
+}/* =========================
+   手机端适配
+========================= */
+
+
+@media screen and (max-width:768px){
+
+
+
+    #mainPage{
+
+        padding:
+
+        20px 12px;
+
+    }
+
+
+
+    .terminal{
+
+
+        padding:22px 16px;
+
+
+        border-radius:14px;
+
+
+    }
+
+
+
+
+
+    .header{
+
+
+        gap:12px;
+
+
+        margin-bottom:25px;
+
+
+    }
+
+
+
+
+
+    .header-logo{
+
+
+        width:68px;
+
+
+        height:68px;
+
+
+    }
+
+
+
+
+
+    .header-title{
+
+
+        font-size:22px;
+
+
+        letter-spacing:2px;
+
+
+    }
+
+
+
+
+
+    .header-subtitle{
+
+
+        font-size:12px;
+
+
+    }
+
+
+
+
+
+
+
+    #systemText{
+
+
+        font-size:15px;
+
+
+        min-height:100px;
+
+
+    }
+
+
+
+
+
+
+
+    .binary-area{
+
+
+        padding:12px;
+
+
+    }
+
+
+
+
+
+    #binary{
+
+
+        font-size:12px;
+
+
+        line-height:1.8;
+
+
+        letter-spacing:.5px;
+
+
+    }
+
+
+
+
+
+
+
+    #decodeButton{
+
+
+        font-size:15px;
+
+
+        padding:
+
+        10px 30px;
+
+
+    }
+
+
+
+
+
+
+
+    #resultBox{
+
+
+        padding:18px;
+
+
+    }
+
+
+
+
+
+
+
+    .result-title{
+
+
+        font-size:18px;
+
+
+        margin-bottom:20px;
+
+
+    }
+
+
+
+
+
+
+
+    .sit-character{
+
+
+        right:10px;
+
+
+        left:auto;
+
+
+        top:-45px;
+
+
+    }
+
+
+
+
+
+    .sit-character img{
+
+
+        width:75px;
+
+
+    }
+
+
+
+
+
+
+
+    .message-area{
+
+
+        gap:15px;
+
+
+    }
+
+
+
+
+
+    .ptilopsis{
+
+
+        width:72px;
+
+
+        left:20px;
+
+
+    }
+
+
+
+
+
+    .message-text{
+
+
+        font-size:15px;
+
+
+        line-height:1.7;
+
+
+        padding-left:55px;
+
+
+    }
+
+
+
+
+
+
+
+    .footer{
+
+
+        font-size:13px;
+
+
+        margin-top:35px;
+
+
+    }
+
+
+
+
+
+
+
+    .background-logo img{
+
+
+        width:230px;
+
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   小屏手机
+========================= */
+
+
+@media screen and (max-width:390px){
+
+
+
+    .message-area{
+
+
+        gap:10px;
+
+
+    }
+
+
+
+
+    .ptilopsis{
+
+
+        width:68px;
+
+
+    }
+
+
+
+
+   .message-text{
+
+    font-size:14px;
+
+    white-space:normal;
+
+}
+
+}
